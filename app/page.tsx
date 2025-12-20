@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Activity, Pin, BarChart3, Calendar, Download, Github, Monitor, Cpu, Clock } from 'lucide-react'
 
 // ============================================
@@ -38,7 +39,7 @@ function NavBar() {
     <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Activity className="w-6 h-6 text-teal-400" />
+          <Image src="/logo.png" alt="OpenNetMeter" width={32} height={32} />
           <span className="font-bold text-lg text-white">OpenNetMeter</span>
         </div>
         <div className="flex items-center gap-4">
@@ -160,16 +161,16 @@ function Features() {
   )
 }
 
-function ScreenshotPlaceholder({ title, aspectRatio = 'aspect-video' }: { title: string; aspectRatio?: string }) {
+function Screenshot({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="rounded-xl overflow-hidden bg-slate-800 border border-slate-700">
-      <div className={`${aspectRatio} flex items-center justify-center bg-gradient-to-br from-slate-800 to-teal-950/40`}>
-        <div className="text-center">
-          <Monitor className="w-12 h-12 mx-auto mb-3 text-slate-600" />
-          <p className="text-slate-500 text-sm">{title}</p>
-          <p className="text-slate-600 text-xs mt-1">Screenshot placeholder</p>
-        </div>
-      </div>
+    <div className="rounded-xl overflow-hidden bg-slate-800 border border-slate-700 transition-all hover:scale-[1.02] hover:border-teal-700">
+      <Image
+        src={src}
+        alt={alt}
+        width={800}
+        height={500}
+        className="w-full h-auto"
+      />
     </div>
   )
 }
@@ -188,14 +189,28 @@ function Screenshots() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <ScreenshotPlaceholder title="Main Dashboard" />
-          <ScreenshotPlaceholder title="Mini Widget (Always on Top)" />
+        {/* Main dashboard - hero screenshot */}
+        <div className="mb-8 max-w-4xl mx-auto">
+          <p className="text-slate-400 text-sm mb-3 text-center">Main Dashboard</p>
+          <Screenshot src="/screenshots/main_page.png" alt="OpenNetMeter Main Dashboard" />
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          <ScreenshotPlaceholder title="Per-Process View" aspectRatio="aspect-[4/3]" />
-          <ScreenshotPlaceholder title="History & Analytics" aspectRatio="aspect-[4/3]" />
-          <ScreenshotPlaceholder title="Settings" aspectRatio="aspect-[4/3]" />
+
+        {/* Two column grid: History and Dark Mode */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <p className="text-slate-400 text-sm mb-3 text-center">History View</p>
+            <Screenshot src="/screenshots/history_page.png" alt="OpenNetMeter History Page" />
+          </div>
+          <div>
+            <p className="text-slate-400 text-sm mb-3 text-center">Dark Mode</p>
+            <Screenshot src="/screenshots/darkmode_main_page.png" alt="OpenNetMeter Dark Mode" />
+          </div>
+        </div>
+
+        {/* Mini widget - centered and smaller */}
+        <div className="max-w-s mx-auto">
+          <p className="text-slate-400 text-sm mb-3 text-center">Mini Widget (Always on Top)</p>
+          <Screenshot src="/screenshots/miniwidget.png" alt="OpenNetMeter Mini Widget" />
         </div>
       </div>
     </section>
@@ -229,8 +244,8 @@ function Footer() {
     <footer className="py-8 px-6 bg-slate-900 border-t border-slate-800">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex items-center gap-2">
-          <Activity className="w-5 h-5 text-teal-400" />
-          <span className="text-slate-400">OpenNetMeter</span>
+          <Image src="/logo.png" alt="OpenNetMeter" width={32} height={32} />
+          <span className="font-bold text-lg text-white">OpenNetMeter</span>
         </div>
         <div className="text-slate-500 text-sm">
           Made with ♥ by{' '}
