@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ElementType } from "react";
 import {
   Pin,
   Calendar,
@@ -97,7 +98,7 @@ function NavBar() {
 
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950">
+    <section className="min-h-screen flex items-center justify-center pt-20 px-6 bg-linear-to-br from-slate-900 via-slate-800 to-teal-950">
       <div className="max-w-4xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mb-6 bg-teal-950 text-teal-300 border border-teal-800">
           <Monitor className="w-4 h-4" />
@@ -163,7 +164,7 @@ function FeatureCard({
   title,
   description,
 }: {
-  icon: any;
+  icon: ElementType;
   title: string;
   description: string;
 }) {
@@ -226,7 +227,7 @@ function Screenshot({ src, alt }: { src: string; alt: string }) {
 
 function CTA() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-teal-950 to-slate-900">
+    <section className="py-24 px-6 bg-linear-to-br from-teal-950 to-slate-900">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Ready to Take Control?
