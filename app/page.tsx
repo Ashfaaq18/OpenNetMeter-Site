@@ -68,18 +68,12 @@ function NavBar() {
           <Image src="/logo.png" alt="OpenNetMeter" width={32} height={32} />
           <span className="font-bold text-lg text-white">OpenNetMeter</span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-8">
           <a
             href="#features"
             className="text-slate-300 hover:text-white transition-colors text-sm hidden sm:block"
           >
             Features
-          </a>
-          <a
-            href="#screenshots"
-            className="text-slate-300 hover:text-white transition-colors text-sm hidden sm:block"
-          >
-            Screenshots
           </a>
           <a
             href={links.releases}
