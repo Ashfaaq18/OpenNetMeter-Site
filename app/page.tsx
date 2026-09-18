@@ -1,23 +1,9 @@
 import Image from "next/image";
 import type { ElementType } from "react";
-import {
-  Pin,
-  Calendar,
-  Download,
-  Github,
-  Monitor,
-  Cpu,
-  Moon,
-} from "lucide-react";
-
-// ============================================
-// LINKS CONFIG - Update these as needed
-// ============================================
-const links = {
-  github: "https://github.com/Ashfaaq18/OpenNetMeter",
-  releases: "https://github.com/Ashfaaq18/OpenNetMeter/releases",
-  author: "https://github.com/Ashfaaq18",
-};
+import { Pin, Calendar, Download, Github, Monitor, Cpu, Moon } from "lucide-react";
+import { links } from "@/app/lib/links";
+import NavBar from "@/app/components/NavBar";
+import Footer from "@/app/components/Footer";
 
 // ============================================
 // FEATURE + SCREENSHOT PAIRS
@@ -60,36 +46,6 @@ const showcaseItems = [
 // ============================================
 // COMPONENTS
 // ============================================
-function NavBar() {
-  return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="OpenNetMeter" width={32} height={32} />
-          <span className="font-bold text-lg text-white">OpenNetMeter</span>
-        </div>
-        <div className="flex items-center gap-8">
-          <a
-            href="#features"
-            className="text-slate-300 hover:text-white transition-colors text-sm hidden sm:block"
-          >
-            Features
-          </a>
-          <a
-            href={links.releases}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm bg-teal-500 hover:bg-teal-600 text-white transition-colors"
-          >
-            <Download className="w-4 h-4" />
-            Download
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
 function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 px-6 bg-linear-to-br from-slate-900 via-slate-800 to-teal-950">
@@ -241,40 +197,6 @@ function CTA() {
         </a>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="py-8 px-6 bg-slate-900 border-t border-slate-800">
-      <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row items-center gap-4">
-        <div className="flex items-center gap-2 md:flex-1 md:justify-start">
-          <Image src="/logo.png" alt="OpenNetMeter" width={32} height={32} />
-          <span className="font-bold text-lg text-white">OpenNetMeter</span>
-        </div>
-        <div className="text-slate-500 text-sm md:flex-1 md:text-center">
-          Made with ♥ by{" "}
-          <a
-            href={links.author}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal-400 transition-colors"
-          >
-            Ashfaaq
-          </a>
-        </div>
-        <div className="flex items-center gap-4 md:flex-1 md:justify-end">
-          <a
-            href={links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-white transition-colors"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </footer>
   );
 }
 
