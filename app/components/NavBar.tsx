@@ -16,7 +16,7 @@ export default function NavBar() {
             href="/features"
             className="text-slate-300 hover:text-white transition-colors text-sm hidden sm:block"
           >
-            Features
+            Product Tour
           </Link>
           <a
             href={links.releases}
