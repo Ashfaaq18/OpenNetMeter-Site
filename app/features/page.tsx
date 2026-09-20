@@ -201,12 +201,20 @@ function Shot({
         className="relative mx-auto overflow-hidden rounded-lg border border-slate-700 bg-white shadow-2xl"
         style={{ minWidth, maxWidth }}
       >
-        <Image src={src} alt={alt} width={width} height={height} className="block h-auto w-full" />
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="block h-auto w-full"
+          loading="eager"
+        />
         {altSrc && (
           <Image
             src={altSrc}
             alt={altAlt ?? alt}
             fill
+            sizes="(max-width: 768px) 100vw, 70vw"
             className={`object-cover transition-opacity duration-200 ${
               showAlt ? "opacity-100" : "opacity-0"
             }`}
