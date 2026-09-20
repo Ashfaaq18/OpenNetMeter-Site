@@ -127,8 +127,8 @@ function Hero() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-teal-500/20 to-peach-500/10 blur-3xl" />
           <div className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 shadow-2xl">
             <Image
-              src="/screenshots/main_page.png"
-              alt="OpenNetMeter dashboard"
+              src="/screenshots/features/summary-light.png"
+              alt="OpenNetMeter summary dashboard"
               width={1200}
               height={760}
               className="w-full h-auto block"
@@ -184,7 +184,7 @@ function FeatureGrid() {
           </div>
           <a
             href="/features"
-            className="inline-flex items-center gap-2 text-sm font-medium text-teal-300 hover:text-teal-200 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-base bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 hover:border-teal-600 transition-all shadow-lg shadow-slate-950/20"
           >
             Explore the product tour
             <ArrowRight className="w-4 h-4" />
@@ -216,7 +216,7 @@ function Showcase() {
       <div className="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-10">
         <div className="overflow-hidden rounded-3xl border border-slate-700 bg-slate-800">
           <Image
-            src="/screenshots/history_page.png"
+            src="/screenshots/features/history-light.png"
             alt="OpenNetMeter history page"
             width={1200}
             height={760}
