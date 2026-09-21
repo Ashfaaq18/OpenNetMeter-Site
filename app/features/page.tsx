@@ -49,8 +49,8 @@ const historyPins: PinDef[] = [
   { n: 1, x: 30.5, y: 14.4 },
   { n: 2, x: 48.5, y: 14.4 },
   { n: 3, x: 77, y: 14.4 },
-  { n: 4, x: 4.5, y: 24.7 },
-  { n: 5, x: 4.5, y: 88.8 },
+  { n: 4, x: 8.5, y: 24.7 },
+  { n: 5, x: 8.5, y: 88.8 },
 ];
 
 const historyLegend: LegendDef[] = [
@@ -121,7 +121,7 @@ const trayLegend: LegendDef[] = [
 function Pin({ n, x, y }: PinDef) {
   return (
     <span
-      className="absolute z-10 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-peach-500 text-xs font-bold text-slate-900 shadow-lg ring-2 ring-slate-900/80"
+      className="absolute z-10 flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-peach-500 text-[10px] font-bold text-slate-900 shadow-lg ring-2 ring-slate-900/80"
       style={{ left: `${x}%`, top: `${y}%` }}
     >
       {n}
@@ -181,7 +181,7 @@ function Shot({
   altAlt,
   showAlt,
   pins,
-  minWidth = 640,
+  minWidth,
   maxWidth,
 }: {
   src: string;
@@ -199,7 +199,7 @@ function Shot({
     <div className="overflow-x-auto rounded-xl bg-slate-800 p-3">
       <div
         className="relative mx-auto overflow-hidden rounded-lg border border-slate-700 bg-white shadow-2xl"
-        style={{ minWidth, maxWidth }}
+        style={{ minWidth, maxWidth, width: "100%" }}
       >
         <Image
           src={src}
@@ -362,7 +362,6 @@ export default function FeaturesPage() {
               alt="OpenNetMeter Settings tab, light mode"
               width={1000}
               height={887}
-              minWidth={560}
               pins={settingsPins}
             />
             <LegendList items={settingsLegend} />
@@ -388,7 +387,6 @@ export default function FeaturesPage() {
                 showAlt={widgetDark}
                 width={650}
                 height={110}
-                minWidth={320}
                 maxWidth={640}
                 pins={widgetPins.slice(0, 4)}
               />
@@ -421,7 +419,6 @@ export default function FeaturesPage() {
               alt="OpenNetMeter tray icon and right-click menu, light mode"
               width={305}
               height={216}
-              minWidth={280}
               maxWidth={460}
               pins={trayPins}
             />
