@@ -67,31 +67,31 @@ const featureCards = [
 
 function Hero() {
   return (
-    <section className="min-h-[calc(100vh-80px)] flex items-center justify-center pt-24 px-6 bg-linear-to-br from-slate-900 via-slate-800 to-teal-950">
-      <div className="max-w-6xl w-full mx-auto grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-12">
+    <section className="min-h-[calc(100vh-80px)] flex items-center justify-center pt-24 px-4 sm:px-6 bg-linear-to-br from-slate-900 via-slate-800 to-teal-950">
+      <div className="max-w-6xl w-full mx-auto grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-8 lg:gap-12">
         <div className="text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mb-6 bg-teal-950 text-teal-300 border border-teal-800">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm mb-5 sm:mb-6 bg-teal-950 text-teal-300 border border-teal-800">
             <Monitor className="w-4 h-4" />
             Free Open Source | Pro Coming Soon
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Monitor your network.
             <br />
             <span className="text-peach-400">Own your data.</span>
           </h1>
 
-          <p className="text-xl text-slate-300 mb-8 max-w-xl">
+          <p className="text-base sm:text-xl text-slate-300 mb-6 sm:mb-8 max-w-xl">
             OpenNetMeter helps you understand exactly how your connection is being used,
             which apps are consuming data, and how your speeds change over time.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10">
             <a
               href={links.releases}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg bg-teal-500 hover:bg-teal-600 text-white transition-all transform hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg bg-teal-500 hover:bg-teal-600 text-white transition-all transform hover:scale-[1.02]"
             >
               <Download className="w-5 h-5" />
               Download for Windows
@@ -100,14 +100,14 @@ function Hero() {
               href={links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg border border-slate-600 text-slate-200 hover:bg-slate-800 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg border border-slate-600 text-slate-200 hover:bg-slate-800 transition-all"
             >
               <Github className="w-5 h-5" />
               View on GitHub
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm text-slate-300">
+          <div className="flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm text-slate-300">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-teal-400" />
               Windows 10/11
@@ -123,7 +123,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative order-first lg:order-last">
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-teal-500/20 to-peach-500/10 blur-3xl" />
           <div className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 shadow-2xl">
             <Image
@@ -173,25 +173,25 @@ function FeatureGrid() {
   return (
     <section id="features" className="px-6 py-20 bg-slate-950">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
             <p className="text-sm uppercase tracking-[0.2em] text-teal-400 font-semibold mb-3">
               Features
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
               Built to stay useful, not complicated.
             </h2>
           </div>
           <a
             href="/features"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-base bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 hover:border-teal-600 transition-all shadow-lg shadow-slate-950/20"
+            className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl font-semibold text-sm sm:text-base bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 hover:border-teal-600 transition-all shadow-lg shadow-slate-950/20"
           >
             Explore the product tour
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
           {featureCards.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
