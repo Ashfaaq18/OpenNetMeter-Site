@@ -18,59 +18,101 @@ type LegendDef = { n: number; title: string; body: string };
 // control it describes.
 // ============================================
 const summaryPins: PinDef[] = [
-  { n: 1, x: 5.6, y: 3.4 },
-  { n: 2, x: 77, y: 2.8 },
-  { n: 3, x: 2.2, y: 95.4 },
-  { n: 4, x: 6.3, y: 12.6 },
-  { n: 5, x: 6.3, y: 30.3 },
-  { n: 6, x: 6.3, y: 52.8 },
-  { n: 7, x: 9, y: 63 },
-  { n: 8, x: 26, y: 12.5 },
-  { n: 9, x: 42, y: 17.7 },
-  { n: 10, x: 25, y: 21.8 },
-  { n: 11, x: 58.3, y: 72.7 },
+  { n: 1, x: 6.6, y: 4.6 },
+  { n: 2, x: 80.6, y: 2.9 },
+  { n: 3, x: 2.2, y: 97.2 },
+  { n: 4, x: 3.7, y: 13.1 },
+  { n: 5, x: 3.7, y: 31.4 },
+  { n: 6, x: 3.7, y: 54.6 },
+  { n: 7, x: 10, y: 63.7 },
+  { n: 8, x: 28.1, y: 13.4 },
+  { n: 9, x: 66.1, y: 13.4 },
+  { n: 10, x: 61.7, y: 19.2 },
+  { n: 11, x: 27.7, y: 23.3 },
+  { n: 12, x: 40, y: 76.6 },
 ];
 
 const summaryLegend: LegendDef[] = [
   { n: 1, title: "Tab bar", body: "Switch between live stats, history, and settings instantly — no reload." },
   { n: 2, title: "About", body: "Opens version info and a direct link to file an issue." },
-  { n: 3, title: "Status bar", body: "Live download and upload speed, always visible along the bottom edge." },
+  { n: 3, title: "Status bar", body: "Live download and upload speed, plus the adapter being counted — the dot turns green while it's active." },
   { n: 4, title: "Current Session", body: "Tracks how much you've used since the app started — resets on relaunch." },
   { n: 5, title: "Usage From", body: "Pick any start date and see your running total from that point on." },
   { n: 6, title: "Weekly Trend", body: "This week's usage at a glance, with the change against last week." },
   { n: 7, title: "Daily breakdown", body: "Hover any day's bar for its exact download/upload split." },
   { n: 8, title: "Active Processes", body: "Every app using your network right now, refreshed every second." },
-  { n: 9, title: "Sortable columns", body: "Click a header to rank apps by current or total usage." },
-  { n: 10, title: "Search online", body: "One click to look up what an unfamiliar process is." },
-  { n: 11, title: "Speed chart", body: "A rolling real-time graph of your download and upload speed." },
+  { n: 9, title: "Record", body: "Start a recording to capture per-app usage until you press Stop. The header shows elapsed time and running totals." },
+  { n: 10, title: "Sortable columns", body: "Click a header to rank apps by current or total usage." },
+  { n: 11, title: "Search online", body: "One click to look up what an unfamiliar process is." },
+  { n: 12, title: "Speed chart", body: "A rolling real-time graph of your download and upload speed." },
+];
+
+const recordingPins: PinDef[] = [
+  { n: 1, x: 57.5, y: 20 },
+  { n: 2, x: 42, y: 24.7 },
+  { n: 3, x: 28, y: 30.3 },
+  { n: 4, x: 59.6, y: 83.7 },
+  { n: 5, x: 85, y: 13.4 },
+];
+
+const recordingLegend: LegendDef[] = [
+  { n: 1, title: "Time and adapters", body: "Start and end time, duration, and every network adapter seen while recording." },
+  { n: 2, title: "Totals", body: "Download and upload for the whole recording, counted the same way as the live view." },
+  { n: 3, title: "Per-app breakdown", body: "What each app used during the recording, largest first." },
+  { n: 4, title: "Export", body: "Save the recording as CSV, JSON or a self-contained HTML report." },
+  { n: 5, title: "Last result", body: "Reopen the last recording any time until you start a new one or close the app." },
 ];
 
 const historyPins: PinDef[] = [
-  { n: 1, x: 30.5, y: 14.4 },
-  { n: 2, x: 48.5, y: 14.4 },
-  { n: 3, x: 77, y: 14.4 },
-  { n: 4, x: 8.5, y: 24.7 },
-  { n: 5, x: 8.5, y: 88.8 },
+  { n: 1, x: 35.8, y: 14.9 },
+  { n: 2, x: 43.3, y: 14.8 },
+  { n: 3, x: 74.5, y: 14.9 },
+  { n: 4, x: 83.2, y: 14.9 },
+  { n: 5, x: 44, y: 20.6 },
+  { n: 6, x: 9.1, y: 28.4 },
+  { n: 7, x: 8.0, y: 89.9 },
 ];
 
 const historyLegend: LegendDef[] = [
-  { n: 1, title: "Profile selector", body: "Filter history by network adapter or connection profile." },
-  { n: 2, title: "Date range", body: "Look back at usage for up to the last 60 days — older data is purged automatically." },
+  { n: 1, title: "Profile selector", body: "Pick which network adapter or connection profile to look at." },
+  { n: 2, title: "Date range", body: "Any range within your history retention: 60 days by default, up to forever (set it in Settings)." },
   { n: 3, title: "Filter", body: "Applies your date range and profile to refresh the table." },
-  { n: 4, title: "Sortable headers", body: "Sort historical totals by process name, downloads, or uploads." },
-  { n: 5, title: "Totals", body: "Combined download and upload totals for the selected period." },
+  { n: 4, title: "Export", body: "Save the selected profile and range as CSV, JSON or a self-contained HTML report." },
+  { n: 5, title: "Last filtered", body: "Shows which profile and time the table was last loaded for." },
+  { n: 6, title: "Sortable headers", body: "Sort historical totals by process name, downloads, or uploads." },
+  { n: 7, title: "Totals", body: "Combined download and upload totals for the selected period." },
+];
+
+const reportPins: PinDef[] = [
+  { n: 1, x: 15.8, y: 13.3 },
+  { n: 2, x: 59.5, y: 14.5 },
+  { n: 3, x: 10.8, y: 28.1 },
+  { n: 4, x: 14.5, y: 42.6 },
+  { n: 5, x: 88.5, y: 38.7 },
+];
+
+const reportLegend: LegendDef[] = [
+  { n: 1, title: "Report summary", body: "The profile and date range the report covers." },
+  { n: 2, title: "Totals", body: "Download and upload for the whole period." },
+  { n: 3, title: "By process", body: "Every app's usage for the period, largest first. A By day table follows further down." },
+  { n: 4, title: "Per-day breakdown", body: "Click a process to expand its usage day by day." },
+  { n: 5, title: "Share bars", body: "How much of the total each app accounts for." },
 ];
 
 const settingsPins: PinDef[] = [
-  { n: 1, x: 4, y: 18.4 },
-  { n: 2, x: 4, y: 25.7 },
-  { n: 3, x: 4, y: 33 },
-  { n: 4, x: 55.5, y: 19.8 },
-  { n: 5, x: 55.5, y: 25.7 },
-  { n: 6, x: 4, y: 50.5 },
-  { n: 7, x: 56.5, y: 50.5 },
-  { n: 8, x: 6.5, y: 78 },
-  { n: 9, x: 56.5, y: 77.6 },
+  { n: 1, x: 40, y: 18.4 },
+  { n: 2, x: 40, y: 26.1 },
+  { n: 3, x: 40, y: 33.9 },
+  { n: 4, x: 89.2, y: 18.4 },
+  { n: 5, x: 71.2, y: 27.3 },
+  { n: 6, x: 72.7, y: 36.9 },
+  { n: 7, x: 22, y: 60.3 },
+  { n: 8, x: 23.6, y: 69.9 },
+  { n: 9, x: 16.8, y: 79.3 },
+  { n: 10, x: 81, y: 59.5 },
+  { n: 11, x: 81, y: 67.4 },
+  { n: 12, x: 81, y: 76 },
+  { n: 13, x: 76.8, y: 89.7 },
 ];
 
 const settingsLegend: LegendDef[] = [
@@ -79,26 +121,30 @@ const settingsLegend: LegendDef[] = [
   { n: 3, title: "Dark mode", body: "Switch the whole interface between light and dark instantly." },
   { n: 4, title: "Mini widget toggle", body: "Turn the floating speed overlay on or off." },
   { n: 5, title: "Widget transparency", body: "Fine-tune how see-through the mini widget is." },
-  { n: 6, title: "Network scope", body: "Choose whether to track your private network, public traffic, or both." },
-  { n: 7, title: "Speed format", body: "Pick the magnitude and unit speeds are shown in." },
-  { n: 8, title: "Delete all data", body: "Wipes saved usage history, with a confirmation step first." },
-  { n: 9, title: "Updates", body: "Check for and install the latest version in one click." },
+  { n: 6, title: "Widget total", body: "Count the widget's total for this session, or since a date you choose." },
+  { n: 7, title: "Network adapter", body: "Automatic follows the adapter Windows routes internet traffic through, so full-tunnel VPNs are counted per app. Or pin one adapter." },
+  { n: 8, title: "Network scope", body: "Choose whether to track your private network, public traffic, or both." },
+  { n: 9, title: "Speed format", body: "Pick the magnitude and unit speeds are shown in." },
+  { n: 10, title: "History retention", body: "Keep daily usage for 60 days, 180 days, a year, or forever." },
+  { n: 11, title: "Export usage data", body: "Save all stored history as CSV, JSON or an HTML report." },
+  { n: 12, title: "Delete usage history", body: "Wipes saved usage history, with a confirmation step first." },
+  { n: 13, title: "About & updates", body: "App version, GitHub and privacy policy links, and a one-click update check." },
 ];
 
 const widgetPins: PinDef[] = [
-  { n: 1, x: 6.5, y: 38 },
-  { n: 2, x: 57, y: 38 },
-  { n: 3, x: 24, y: 78 },
-  { n: 4, x: 96.5, y: 20 },
+  { n: 1, x: 6.2, y: 18 },
+  { n: 2, x: 50.2, y: 18 },
+  { n: 3, x: 18, y: 75 },
+  { n: 4, x: 93.8, y: 70 },
 ];
 
 const widgetLegend: LegendDef[] = [
   { n: 1, title: "Download readout", body: "Current download speed, visible without opening the main app." },
   { n: 2, title: "Upload readout", body: "Current upload speed, right beside your download rate." },
-  { n: 3, title: "Session totals", body: "A running total for this session sits under each speed." },
+  { n: 3, title: "Totals", body: "The total under each speed counts this session, or usage since a date you pick." },
   { n: 4, title: "Pin button", body: "Locks the widget on top of every other window." },
   { n: 5, title: "Draggable chrome", body: "Move it anywhere — position is remembered." },
-  { n: 6, title: "Right-click menu", body: "Quick access to reopen the full app or hide the widget." },
+  { n: 6, title: "Right-click menu", body: "Reopen the full app, hide the widget, or switch the total between this session and a date." },
 ];
 
 const trayPins: PinDef[] = [
@@ -248,7 +294,9 @@ function SectionHeading({
 
 const jumpNavItems = [
   { href: "#summary", label: "Summary" },
+  { href: "#recording", label: "Recording" },
   { href: "#history", label: "History" },
+  { href: "#report", label: "Report" },
   { href: "#settings", label: "Settings" },
   { href: "#widget", label: "Mini Widget" },
   { href: "#tray", label: "Tray" },
@@ -295,6 +343,7 @@ function TourHero() {
 // ============================================
 export default function FeaturesPage() {
   const [summaryDark, setSummaryDark] = useState(false);
+  const [reportDark, setReportDark] = useState(false);
   const [widgetDark, setWidgetDark] = useState(false);
 
   return (
@@ -308,7 +357,7 @@ export default function FeaturesPage() {
           <SectionHeading
             eyebrow="01 / Live view"
             title="Main Window & Summary Tab"
-            intro="Everything lives inside one frameless window with its own tab bar and status strip — and the Summary tab is what greets you first: session usage, a weekly trend, and exactly which process is using your bandwidth. Also available in dark mode."
+            intro="Everything lives inside one frameless window with its own tab bar and status strip — and the Summary tab is what greets you first: session usage, a weekly trend, exactly which process is using your bandwidth, and a Record button for capturing any stretch of time. Also available in dark mode."
           />
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_320px]">
             <div>
@@ -319,8 +368,8 @@ export default function FeaturesPage() {
                 altSrc="/screenshots/features/summary-dark.png"
                 altAlt="OpenNetMeter main window, Summary tab, dark mode"
                 showAlt={summaryDark}
-                width={2100}
-                height={1424}
+                width={1000}
+                height={725}
                 pins={summaryPins}
               />
             </div>
@@ -329,19 +378,39 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      <section id="recording" className="scroll-mt-32 border-t border-slate-800 bg-slate-900 px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="02 / Capture a moment"
+            title="Traffic Recording"
+            intro="Press Record before a download, game or video call, then Stop to see exactly what each app used in between. A recording keeps running across reconnects and adapter switches."
+          />
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_320px]">
+            <Shot
+              src="/screenshots/features/recording-light.png"
+              alt="OpenNetMeter traffic recording results, light mode"
+              width={1000}
+              height={725}
+              pins={recordingPins}
+            />
+            <LegendList items={recordingLegend} />
+          </div>
+        </div>
+      </section>
+
       <section id="history" className="scroll-mt-32 border-t border-slate-800 bg-slate-900 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="02 / Looking back"
+            eyebrow="03 / Looking back"
             title="History Tab"
-            intro="Filter any date range and see exactly what each app used, per network profile."
+            intro="Filter any date range and see exactly what each app used, per network profile — then export it."
           />
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_320px]">
             <Shot
               src="/screenshots/features/history-light.png"
               alt="OpenNetMeter History tab, light mode"
-              width={2100}
-              height={1424}
+              width={1000}
+              height={725}
               pins={historyPins}
             />
             <LegendList items={historyLegend} />
@@ -349,10 +418,36 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      <section id="report" className="scroll-mt-32 border-t border-slate-800 bg-slate-900 px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="04 / Share it"
+            title="HTML Report"
+            intro="Export from History, Settings or a recording as a single offline HTML file. No scripts and no external requests, so it opens anywhere and is safe to share. It follows your light or dark theme and prints cleanly."
+          />
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_320px]">
+            <div>
+              <ThemeSwitch dark={reportDark} onChange={setReportDark} />
+              <Shot
+                src="/screenshots/features/html-report-light.png"
+                alt="OpenNetMeter HTML usage report, light mode"
+                altSrc="/screenshots/features/html-report-dark.png"
+                altAlt="OpenNetMeter HTML usage report, dark mode"
+                showAlt={reportDark}
+                width={2000}
+                height={1720}
+                pins={reportPins}
+              />
+            </div>
+            <LegendList items={reportLegend} />
+          </div>
+        </div>
+      </section>
+
       <section id="settings" className="scroll-mt-32 border-t border-slate-800 bg-slate-900 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="03 / Preferences"
+            eyebrow="05 / Preferences"
             title="Settings Tab"
             intro="Tune how OpenNetMeter runs, what it watches, and how it looks."
           />
@@ -361,7 +456,8 @@ export default function FeaturesPage() {
               src="/screenshots/features/settings-light.png"
               alt="OpenNetMeter Settings tab, light mode"
               width={1000}
-              height={887}
+              height={950}
+              minWidth={560}
               pins={settingsPins}
             />
             <LegendList items={settingsLegend} />
@@ -372,7 +468,7 @@ export default function FeaturesPage() {
       <section id="widget" className="scroll-mt-32 border-t border-slate-800 bg-slate-900 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="04 / Always on top"
+            eyebrow="06 / Always on top"
             title="Mini Widget"
             intro="A pocket-sized readout that floats over everything else on your desktop, in either theme."
           />
@@ -385,9 +481,10 @@ export default function FeaturesPage() {
                 altSrc="/screenshots/features/widget-dark.png"
                 altAlt="OpenNetMeter mini widget, dark mode"
                 showAlt={widgetDark}
-                width={650}
-                height={110}
-                maxWidth={640}
+                width={325}
+                height={55}
+                minWidth={300}
+                maxWidth={480}
                 pins={widgetPins.slice(0, 4)}
               />
               <div className="mt-4 flex flex-col gap-3">
@@ -409,7 +506,7 @@ export default function FeaturesPage() {
       <section id="tray" className="scroll-mt-32 border-t border-slate-800 bg-slate-900 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="05 / Background"
+            eyebrow="07 / Background"
             title="System Tray"
             intro="Runs quietly in the background until you need it — right-click the tray icon for quick actions."
           />

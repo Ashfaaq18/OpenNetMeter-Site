@@ -4,8 +4,10 @@ import {
   ArrowRight,
   Calendar,
   Check,
+  CircleDot,
   Cpu,
   Download,
+  FileDown,
   Github,
   Monitor,
   Moon,
@@ -28,7 +30,7 @@ const valuePoints = [
     icon: TrendingUp,
     title: "Track usage over time",
     description:
-      "Review daily and monthly trends to understand how your connection behaves across the week and month.",
+      "Review daily and weekly trends, keep history as long as you like, and export it as CSV, JSON or an HTML report.",
   },
   {
     icon: Pin,
@@ -43,7 +45,19 @@ const featureCards = [
     icon: Cpu,
     title: "Per-process monitoring",
     description:
-      "See exactly which apps are consuming bandwidth in real time, with clean totals and clear rankings.",
+      "See exactly which apps are consuming bandwidth in real time — even through full-tunnel VPNs.",
+  },
+  {
+    icon: CircleDot,
+    title: "Record any moment",
+    description:
+      "Hit Record before a download or call and see exactly what each app used until you stop.",
+  },
+  {
+    icon: FileDown,
+    title: "Export and reports",
+    description:
+      "Export history or recordings as CSV, JSON or a self-contained HTML report you can share.",
   },
   {
     icon: Calendar,
@@ -129,8 +143,8 @@ function Hero() {
             <Image
               src="/screenshots/features/summary-light.png"
               alt="OpenNetMeter summary dashboard"
-              width={1200}
-              height={760}
+              width={1000}
+              height={725}
               className="w-full h-auto block"
             />
           </div>
@@ -191,7 +205,7 @@ function FeatureGrid() {
           </a>
         </div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {featureCards.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
@@ -218,8 +232,8 @@ function Showcase() {
           <Image
             src="/screenshots/features/history-light.png"
             alt="OpenNetMeter history page"
-            width={1200}
-            height={760}
+            width={1000}
+            height={725}
             className="w-full h-auto block"
           />
         </div>
@@ -237,6 +251,7 @@ function Showcase() {
               "Spot which apps are consuming the most data at any given moment.",
               "Look back at your history to understand long-term usage patterns.",
               "Keep a floating mini-widget visible while you work without leaving the app.",
+              "Record any stretch of time and export it as CSV, JSON or an HTML report.",
             ].map((point) => (
               <li key={point} className="flex items-start gap-3 text-slate-300">
                 <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-teal-500 text-slate-900">
