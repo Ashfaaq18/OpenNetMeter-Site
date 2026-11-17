@@ -132,10 +132,10 @@ const settingsLegend: LegendDef[] = [
 ];
 
 const widgetPins: PinDef[] = [
-  { n: 1, x: 6.2, y: 49.1 },
-  { n: 2, x: 50.2, y: 49.1 },
+  { n: 1, x: 6.2, y: 18 },
+  { n: 2, x: 50.2, y: 18 },
   { n: 3, x: 18, y: 75 },
-  { n: 4, x: 93.8, y: 30.9 },
+  { n: 4, x: 93.8, y: 70 },
 ];
 
 const widgetLegend: LegendDef[] = [
