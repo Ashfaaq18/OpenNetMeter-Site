@@ -5,6 +5,7 @@ import {
   Calendar,
   Check,
   CircleDot,
+  Coffee,
   Cpu,
   Download,
   FileDown,
@@ -86,7 +87,7 @@ function Hero() {
         <div className="text-left">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm mb-5 sm:mb-6 bg-teal-950 text-teal-300 border border-teal-800">
             <Monitor className="w-4 h-4" />
-            Free Open Source | Pro Coming Soon
+            Free & Open Source
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
@@ -290,6 +291,19 @@ function CTA() {
           <Download className="w-5 h-5" />
           Download OpenNetMeter
         </a>
+        <p className="mt-6 text-sm text-slate-400">
+          OpenNetMeter is free and built by one person. If it helps you, you can{" "}
+          <a
+            href={links.support}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-peach-400 hover:text-peach-300 underline-offset-4 hover:underline"
+          >
+            <Coffee className="w-4 h-4" />
+            buy me a coffee
+          </a>
+          .
+        </p>
       </div>
     </section>
   );

@@ -7,12 +7,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'OpenNetMeter - Network Monitor for Windows',
-  description: 'A simple program to monitor your network/data usage. Made for the average Windows user. The open-source Community edition is free, with a Pro edition coming soon.',
+  description: 'A simple program to monitor your network/data usage. Made for the average Windows user. Free and open source.',
   keywords: ['network monitor', 'data usage', 'windows', 'bandwidth', 'open source'],
   authors: [{ name: 'Ashfaaq' }],
   openGraph: {
     title: 'OpenNetMeter - Network Monitor for Windows',
-    description: 'A simple program to monitor your network/data usage. The open-source Community edition is free, with a Pro edition coming soon.',
+    description: 'A simple program to monitor your network/data usage. Free and open source.',
     url: 'https://opennetmeter.com',
     siteName: 'OpenNetMeter',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'OpenNetMeter - Network Monitor for Windows',
-    description: 'A simple program to monitor your network/data usage. The open-source Community edition is free, with a Pro edition coming soon.',
+    description: 'A simple program to monitor your network/data usage. Free and open source.',
   },
 }
 
