@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github } from "lucide-react";
+import { Coffee, Github } from "lucide-react";
 import { links } from "@/app/lib/links";
 
 export default function Footer() {
@@ -23,9 +23,19 @@ export default function Footer() {
         </div>
         <div className="flex items-center gap-4 md:flex-1 md:justify-end">
           <a
+            href={links.support}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-peach-400 transition-colors"
+          >
+            <Coffee className="w-4 h-4" />
+            Buy me a coffee
+          </a>
+          <a
             href={links.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="OpenNetMeter on GitHub"
             className="text-slate-400 hover:text-white transition-colors"
           >
             <Github className="w-5 h-5" />
